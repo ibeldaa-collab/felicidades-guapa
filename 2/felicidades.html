@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Imágenes y Carrusel CSS</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      background-image: url(corazones.png);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2em;
+    }
+
+    /* Carrusel */
+    .carrusel {
+      overflow: hidden;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      background: #fff;
+    }
+
+    .carrusel .imagenes {
+      display: flex;
+      width: max-content;
+      animation: mover 20s linear infinite;
+    }
+
+    .carrusel .imagenes img {
+      width: 100%;
+      max-width: 500px;
+      height: auto; /* para mantener proporción */
+      object-fit: cover;
+      margin-right: 10px;
+      border-radius: 10px;
+    }
+
+    @keyframes mover {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); } 
+    }
+
+    /* Medias queries para pantallas pequeñas */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.5em;
+      }
+
+      .carrusel .imagenes img {
+        max-width: 300px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.2em;
+      }
+
+      .carrusel .imagenes img {
+        max-width: 200px;
+        margin-right: 5px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>PARA LA MAS GUAPA FELICIDADES</h1>
+
+  <div class="carrusel">
+    <div class="imagenes">
+      <img src="foto4.png" alt="Carrusel 1">
+      <img src="foto3.png" alt="Carrusel 2">
+      <img src="foto2.png" alt="Carrusel 3">
+    </div>
+  </div>
+
+</body>
+</html>
